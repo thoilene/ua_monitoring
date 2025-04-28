@@ -1,8 +1,8 @@
 import streamlit as st
-import plotly.express as px
 import pandas as pd
 from datetime import datetime, date
 from PIL import Image
+import plotly.express as px
 
 from streamlit_extras.stylable_container import stylable_container
 
