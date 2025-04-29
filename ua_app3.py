@@ -139,10 +139,10 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
     alt_antraege=alt_antraege.replace(",", ".")
     
     act_bearb_antraege=f"{act_bearb_antraege:,}"
-    act_bearb_antraege=act_antraege.replace(",", ".")
+    act_bearb_antraege=act_bearb_antraege.replace(",", ".")
     
     alt_bearb_antraege=f"{alt_bearb_antraege:,}"
-    alt_bearb_antraege=alt_antraege.replace(",", ".")
+    alt_bearb_antraege=alt_bearb_antraege.replace(",", ".")
     
     act_fehlerhaft=f"{act_fehlerhaft:,}"
     act_fehlerhaft=act_fehlerhaft.replace(",", ".")
@@ -178,7 +178,7 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
             </p>
             
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Eine Deutung der Gewinne und Verluste nach Herkunftsländern ist  früh im Verfahren noch sinnlos.
+            Eine Deutung der Gewinne und Verluste nach Herkunftsländern ist  früh im Verfahren wenig aussagekräftig.
             </p>
         """, unsafe_allow_html=True)
 
