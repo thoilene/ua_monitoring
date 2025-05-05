@@ -54,10 +54,10 @@ if TODAY_tmp.weekday()==0:
     decr = 3
 TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
 
-heute =  TODAY.strftime("%d. %b %Y ")
+heute =  TODAY.strftime("%d.%m.%Y")
 
 # Title section with yellow background
-st.markdown(f"""<div class="yellow-section"><h4>Monitoring: {heute} (Stichtag)</h4></div>""", unsafe_allow_html=True)
+st.markdown(f"""<div class="yellow-section"><h4><b>Monitoring WSV 2025/26</b>: {heute} (Stichtag)</h4></div>""", unsafe_allow_html=True)
 
 # Header with logo
 st.image("logo-uniassist-newsletter.png", width=157)
@@ -68,12 +68,22 @@ ldf1 = sem_agg_df[sem_agg_df.Semester=="WS 2025"]
 ldf2 = sem_agg_df[sem_agg_df.Semester=="WS 2024"]
 act_antraege = ldf1.Antragsnummer.iat[0]-ldf1["zurückgezogen"].iat[0]
 alt_antraege = ldf2.Antragsnummer.iat[0]-ldf2["zurückgezogen"].iat[0]
+
+print(ldf1 )
+print(act_antraege )
+print(ldf2 )
+print(alt_antraege)
+
 diff1 = round(100.0*round(abs(act_antraege-alt_antraege)/alt_antraege, 2),2)
 #act_weiter_antraege = ldf1["weiterleiten"].iat[0]
 #alt_weiter_antraege = ldf2["weiterleiten"].iat[0]
 
 act_bearb_antraege = ldf1["weitergeleitet"].iat[0]
 alt_bearb_antraege = ldf2["weitergeleitet"].iat[0]
+
+print("***act_bearb_antraege:",act_bearb_antraege)
+print("***alt_bearb_antraege:",alt_bearb_antraege)
+    
 diff2 = round(100.0*abs(act_bearb_antraege-alt_bearb_antraege)/alt_bearb_antraege, 2)
 act_fehlerhaft = ldf1["fehlerhaft"].iat[0]
 alt_fehlerhaft = ldf2["fehlerhaft"].iat[0]
@@ -104,9 +114,12 @@ with stylable_container(
             }
             """,
     ):
+    st.header("Einführung")
     st.markdown(f"""
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-Das Verfahrens-Dashboard im internen Bereich der Verfahrenskommunikation  zeigt tagesaktuell die Fortschritte im laufenden Semesterverfahren. Angezeigt werden die Studienbewerbungen, die eingegangen bzw. schon bearbeitet worden sind im prozentualen Vergleich zum Vorjahr.
+Dieses Dashboard zeigt die Fortschritte des laufenden ua-Semesterverfahrens.
+Dargestellt werden in fünf Grafiken zentrale Indikatoren der Zulassungsvorbereitung im Verein.
+Sie sollen den Mitgliedern dabei helfen, die eigenen Zulassungsverfahren adäquat zu planen und vorzubereiten.
 </p>
 <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
 Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Geschäftsstelle:
@@ -129,7 +142,7 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
     # Create three columns for KPIs
     
     
-    st.header("Verfahrensstand WS 25/26 zum Stichtag")
+    st.header("Verfahrensstand zum Stichtag")
     col1, col2, col3= st.columns(3)
 
     act_antraege=f"{act_antraege:,}"
@@ -138,14 +151,25 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
     alt_antraege=f"{alt_antraege:,}"
     alt_antraege=alt_antraege.replace(",", ".")
     
+    print("xxxxxxact_bearb_antraege:",act_bearb_antraege)
+    print("xxxxxxalt_bearb_antraege:",alt_bearb_antraege)
+    
     act_bearb_antraege=f"{act_bearb_antraege:,}"
     act_bearb_antraege=act_bearb_antraege.replace(",", ".")
     
     alt_bearb_antraege=f"{alt_bearb_antraege:,}"
     alt_bearb_antraege=alt_bearb_antraege.replace(",", ".")
     
+    print("zzzzzzact_bearb_antraege:",act_bearb_antraege)
+    print("zzzzzzalt_bearb_antraege:",alt_bearb_antraege)
+    
     act_fehlerhaft=f"{act_fehlerhaft:,}"
     act_fehlerhaft=act_fehlerhaft.replace(",", ".")
+    
+    print("act_antraege:",act_antraege)
+    print("alt_antraege:",alt_antraege)
+    print("act_bearb_antraege:",act_bearb_antraege)
+    print("alt_bearb_antraege:",alt_bearb_antraege)
     
     with col1:
         st.metric(label="Anträge (Eingang)", 
@@ -164,8 +188,8 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
     #with st.markdown('<div>', unsafe_allow_html=True):
     
     st.markdown(f"""
-            <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'><i>
-            Berlin, {heute}:</i>
+            <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'><b><i>
+            uni-assist-Geschäftssstelle Berlin, {heute}:</i></b>
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
             Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr noch deutlich zurück (-{diff1}%). Die sechs wichtigsten Herkunftsländer des Vorjahres liegen leicht bis deutlich hinter den Vorjahreszahlen, v.a. Pakistan und Bangladesch. V.a. Ghana legt deutlich zu.
@@ -202,7 +226,7 @@ with stylable_container(
         # Create pie chart
         print(as_df)
         
-        fig = px.pie(as_df,  values='Antraege', names='Status', title=f"Verteilung der Anträge nach Status - Stand Stichtag", color_discrete_sequence=['#808080', '#c9aa4c', '#800020']  # uni-assist colors
+        fig = px.pie(as_df,  values='Antraege', names='Status', title=f"Abb. 2: Kuchengrafik Anträge", color_discrete_sequence=['#808080', '#c9aa4c', '#800020']  # uni-assist colors
         )
         fig.update_traces(sort=False,title_position='top center',textinfo='percent+value', selector=dict(type='pie')) 
         # Update layout
@@ -211,12 +235,12 @@ with stylable_container(
             font_family="Ubuntu, Helvetica, Arial, sans-serif",
              title={
                 'y': 0.98,
-                'x': 0.8,
+                'x': 0.4,
                 'xanchor': 'right',
                 'yanchor': 'top', 
                 },
             titlefont={
-                'size': 22
+                'size': 20
                 },
             
             autosize=False,
@@ -229,6 +253,13 @@ with stylable_container(
 
         # Display the chart in Streamlit
         st.plotly_chart(fig, use_container_width=False)
+        
+        st.markdown(f"""           
+            <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
+            Das Kuchendiagramm zeigt in absoluten Zahlen und prozentualen Anteilen das Aufkommen an Studienbewerbungen zum Stichtag sowie die Arbeitsfortschritte.
+            </p>
+        """, unsafe_allow_html=True)
+
 st.divider()
 with stylable_container(
         key="container_with_border3",
@@ -246,15 +277,15 @@ with stylable_container(
         # Main statistics section
         # Create three columns for KPIs
 
-        st.header("Bewerbungseingang WS 25/26")
+        st.header("Bewerbungseingang")
         #with st.markdown('<div>', unsafe_allow_html=True):
-        st.markdown(f"""
-                <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-                Die Berliner Geschäftsstelle hat im Vergleich zum WSV 2024 bisher kein Wachstum an eingegangenen Studienbewerbungen zu verzeichnen. Die Bearbeitung geht schneller im Vergleich zum WSV 2024 zum gleichem Zeitpunkt.
-                </p>
+        #st.markdown(f"""
+        #        <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
+         #       Die Berliner Geschäftsstelle hat im Vergleich zum WSV 2024 bisher kein Wachstum an eingegangenen #Studienbewerbungen zu verzeichnen. Die Bearbeitung geht schneller im Vergleich zum WSV 2024 zum gleichem Zeitpunkt.
+               # </p>
 
 
-            """, unsafe_allow_html=True)
+        #    """, unsafe_allow_html=True)
 
 # Applications data
 
@@ -264,7 +295,7 @@ xsticks = [f"Kw{x}" for x in list(kw_df.Eingangswoche.values)]
 
 fig = px.bar(kw_df,x=xsticks, y = ["WS 2024","WS 2025"], 
        labels={'x': 'Eingangswoche', 'value':'Anträge', 'variable':'Semester'},
-        barmode="group", title=f"Bewerbungseingang nach KW (Stichtag)",template="gridon", 
+        barmode="group", title=f"Abb. 3: Doppelbalken-Grafik Bewerbungseingang nach KW (am Stichtag)",template="gridon", 
                     height=500, range_y=[0,10000])
 
 fig.update_layout(
@@ -281,7 +312,7 @@ fig.update_layout(
                 'yanchor': 'top', 
                 },
     titlefont={
-                'size': 22
+                'size': 20
                 },
 )
 
@@ -295,15 +326,12 @@ st.divider()
 
 # Top 5 countries section
 st.header("Herkunftsländer")
-st.write("""
-Über 67% der Studienbewerberinnen und -bewerber im WSV 25 kommen aus den Top 10 Herkunftsländern.
 
-""")
 st.divider()
 
 laenderTop10_df = pd.read_csv("Top10BewerberNachLaender.csv", sep=";")
 #countries_data["color"] = ['#c9aa4c','#800020', '#B26679',  '#808080','#D3D3D3']
-fig_countries = px.pie(laenderTop10_df,  values='WS 2025', names='Herkunftsland', title="Herkunftsländer der Studienbewerber*innen", labels={'value':'Herkunftsland'} ,
+fig_countries = px.pie(laenderTop10_df,  values='WS 2025', names='Herkunftsland', title="Abb. 4: Kuchengrafik Herkunftsländer", labels={'value':'Herkunftsland'} ,
 )
 
 #fig_countries = px.bar(countries_data,                     x='Land',                      y='Anteil',      title='Top 5 Herkunftsländer der Bewerber*innen')
@@ -314,12 +342,12 @@ fig_countries.update_layout(
     margin=dict(l=40, r=40, t=40, b=40),
     title={
                 'y': 0.98,
-                'x': 0.4,
+                'x': 0.3,
                 'xanchor': 'center',
                 'yanchor': 'top', 
                 },
     titlefont={
-                'size': 22
+                'size': 20
                 },
 )
 
@@ -327,22 +355,28 @@ fig_countries.update_layout(
 st.plotly_chart(fig_countries, use_container_width=True)
 # '#808080', '#c9aa4c', '#800020'
 
+st.write("""
+Die Kuchengrafik 'Herkunftsländer' weist die Anteile aller Studienbewerber*innen im aktuellen Semesterverfahren nach Nationalität aus.
+Dabei werden die TOP 10 Herkunftsländer einzeln, alle weiteren als 'Tortenstück' ausgewiesen.
+""")
+
 st.divider()
 
 ######################################################################
+st.header("Gewinne und Verluste")
 colors = []
 for x in laenderTop10_df["Diff (%)"].values:
     if x >= 0:
         colors.append("Zuwachs")
     else:
-        colors.append("Rueckgang")
+        colors.append("Rückgang")
 print(colors)
-laenderTop10_df['Aenderung zum Vorjahr'] = colors
+laenderTop10_df['Änderung zum Vorjahr'] = colors
 
-fig = px.bar(laenderTop10_df,x="Herkunftsland", y = ["Diff (%)"], color = "Aenderung zum Vorjahr",
-       labels={'x': 'Herkunftsland', 'value':'Dfifferenz (%)', 'variable':'Aenderung zum Vorjahr'},
-       color_discrete_map={'Rueckgang':'red','Zuwachs':'green'},
-       barmode="group", title="Gewinne/Verluste Bewerber*innen aus den TOP 10 Herkunftsländern",template="gridon", 
+fig = px.bar(laenderTop10_df,x="Herkunftsland", y = ["Diff (%)"], color = "Änderung zum Vorjahr",
+       labels={'x': 'Herkunftsland', 'value':'Dfifferenz (%)', 'variable':'Änderung zum Vorjahr'},
+       color_discrete_map={'Rückgang':'red','Zuwachs':'green'},
+       barmode="group", title="Abb. 5: Gewinne und Verluste an Bewerber*innen aus den TOP 10 Herkunftsländern",template="gridon", 
                     height=500, range_y=[-50,50])
 
 
@@ -355,16 +389,20 @@ fig.update_layout(
     font_family="Ubuntu, Helvetica, Arial, sans-serif",
     title={
                 'y': 0.98,
-                'x': 0.5,
+                'x': 0.50,
                 'xanchor': 'center',
                 'yanchor': 'top', 
                 },
     titlefont={
-                'size': 22
+                'size': 19
                 },
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.write("""
+Für die TOP 10 Herkunftsländer zeigt die Balkengrafik 'Gewinne/Verluste'  die prozentualen Zuwächse bzw. die Rückgänge an Studienbewerber*innen im Vergleich zum Vorjahr jeweils zum Stichtag.
+""")
 #######################################################################
 
 st.divider()
