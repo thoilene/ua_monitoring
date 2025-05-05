@@ -296,7 +296,7 @@ xsticks = [f"Kw{x}" for x in list(kw_df.Eingangswoche.values)]
 fig = px.bar(kw_df,x=xsticks, y = ["WS 2024","WS 2025"], 
        labels={'x': 'Eingangswoche', 'value':'Anträge', 'variable':'Semester'},
         barmode="group", title=f"Abb. 3: Doppelbalken-Grafik Bewerbungseingang nach KW (am Stichtag)",template="gridon", 
-                    height=500, range_y=[0,10000])
+                    height=500, range_y=[0,15000])
 
 fig.update_layout(
     width=900,
