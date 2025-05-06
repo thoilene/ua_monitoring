@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, date
 from PIL import Image
+import PIL
 import plotly.express as px
 
 from streamlit_extras.stylable_container import stylable_container
@@ -59,8 +60,21 @@ heute =  TODAY.strftime("%d.%m.%Y")
 # Title section with yellow background
 st.markdown(f"""<div class="yellow-section"><h4><b>Monitoring WSV 2025/26</b>: {heute} (Stichtag)</h4></div>""", unsafe_allow_html=True)
 
-# Header with logo
-st.image("logo-uniassist-newsletter.png", width=157)
+# logo-uniassist-newsletter.png
+image_logo = Image.open("uni-assist_nur_logo.png")
+w = int(0.35*(image_logo.width))
+h = int(0.35*(image_logo.height))
+image_logo = image_logo.resize((w,h)) 
+st.image(image_logo)
+
+image = Image.open('ua_img.png')
+image_green = Image.open('traffic-light-green.png')
+image_red = Image.open('red.png')
+image_yellow = Image.open('yellow.png')
+
+h = 110 #int(0.145*(image_green.height))
+w = int(0.25*(image_green.width))
+image_green = image_green.resize(size=(w,h))
 #
 
 sem_agg_df = pd.read_csv("antrag_nach_semester_agg.csv",sep=";")
@@ -93,8 +107,8 @@ image_green = Image.open('traffic-light-green.png')
 image_red = Image.open('red.png')
 image_yellow = Image.open('yellow.png')
 
-h = 120 #int(0.145*(image_green.height))
-w = int(0.375*(image_green.width))
+h = int(0.09*(image_green.height))
+w = int(0.25*(image_green.width))
 image_green = image_green.resize(size=(w,h))
 
 col01, col02 = st.columns([1, 10])
@@ -183,8 +197,8 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
 
     with col3:
         with st.container(border=True, height=127):
-            st.markdown("<p style='font-size:14px; margin-bottom:1px; margin-left:1px;margin-right:1px; white-space: normal;'> Abb. 1: Status - <font color='green'>Grün</font></p>", unsafe_allow_html=True)
             st.image(image_green)
+        st.markdown("<p style='font-size:14px; margin-top:1px; margin-left:10px;margin-right:1px; white-space: normal;'> Abb. 1: Status - <font color='green'><b>Grün</b></font></p>", unsafe_allow_html=True)
 
     #with st.markdown('<div>', unsafe_allow_html=True):
     st.markdown(f"""
