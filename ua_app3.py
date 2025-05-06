@@ -52,8 +52,8 @@ TODAY_tmp = datetime.today().date()
 decr = 1
 if TODAY_tmp.weekday()==0:
     decr = 3
-#TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
-TODAY     = datetime(2025,4,28).date()
+TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
+
 heute =  TODAY.strftime("%d.%m.%Y")
 
 # Title section with yellow background
@@ -89,12 +89,12 @@ act_fehlerhaft = ldf1["fehlerhaft"].iat[0]
 alt_fehlerhaft = ldf2["fehlerhaft"].iat[0]
 
 image = Image.open('ua_img.png')
-image_green = Image.open('green.png')
+image_green = Image.open('traffic-light-green.png')
 image_red = Image.open('red.png')
 image_yellow = Image.open('yellow.png')
 
-h = 60 #int(0.3*(image_green.height))
-w = int(0.5*(image_green.width))
+h = 150 #int(0.145*(image_green.height))
+w = int(0.375*(image_green.width))
 image_green = image_green.resize(size=(w,h))
 
 col01, col02 = st.columns([1, 10])
