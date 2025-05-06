@@ -52,8 +52,8 @@ TODAY_tmp = datetime.today().date()
 decr = 1
 if TODAY_tmp.weekday()==0:
     decr = 3
-TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
-
+#TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
+TODAY     = datetime(2025,4,28).date()
 heute =  TODAY.strftime("%d.%m.%Y")
 
 # Title section with yellow background
