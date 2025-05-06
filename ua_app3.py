@@ -93,7 +93,7 @@ image_green = Image.open('green.png')
 image_red = Image.open('red.png')
 image_yellow = Image.open('yellow.png')
 
-h = 130 #int(0.3*(image_green.height))
+h = 60 #int(0.3*(image_green.height))
 w = int(0.5*(image_green.width))
 image_green = image_green.resize(size=(w,h))
 
@@ -182,7 +182,7 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
                 delta=f"+{diff2}% zum Vorjahr: {alt_bearb_antraege}", border=True)
 
     with col3:
-        with st.container(border=True, height=130):
+        with st.container(border=True, height=127):
             st.image(image_green)
 
     #with st.markdown('<div>', unsafe_allow_html=True):
