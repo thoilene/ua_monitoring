@@ -93,7 +93,7 @@ image_green = Image.open('traffic-light-green.png')
 image_red = Image.open('red.png')
 image_yellow = Image.open('yellow.png')
 
-h = 150 #int(0.145*(image_green.height))
+h = 120 #int(0.145*(image_green.height))
 w = int(0.375*(image_green.width))
 image_green = image_green.resize(size=(w,h))
 
@@ -183,10 +183,10 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
 
     with col3:
         with st.container(border=True, height=127):
+            st.markdown("<p style='font-size:14px; margin-bottom:1px; margin-left:1px;margin-right:1px; white-space: normal;'> Abb. 1: Status - <font color='green'>Grün</font></p>", unsafe_allow_html=True)
             st.image(image_green)
 
     #with st.markdown('<div>', unsafe_allow_html=True):
-    
     st.markdown(f"""
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'><b><i>
             uni-assist-Geschäftssstelle Berlin, {heute}:</i></b>
