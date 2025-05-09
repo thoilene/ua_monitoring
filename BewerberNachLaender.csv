@@ -1,151 +1,155 @@
 Herkunftsland;WS 2025;WS 2024;Diff (abs);Diff (%)
-Indien;9284;9447;-163;-1.73
-Pakistan;3933;4468;-535;-11.97
-Türkei;2789;2337;452;19.34
-Iran (Islamische Republik);2206;2203;3;0.14
-Deutschland;2055;2081;-26;-1.25
-China;1859;1918;-59;-3.08
-Ghana;1125;831;294;35.38
-Bangladesch;1028;1824;-796;-43.64
-Ägypten;969;843;126;14.95
-Ukraine;806;715;91;12.73
-Nigeria;714;737;-23;-3.12
-Nepal;555;342;213;62.28
-Russland;551;718;-167;-23.26
-USA;453;416;37;8.89
-Syrien;449;418;31;7.42
-Staatenlos;440;392;48;12.24
-Sri Lanka;409;299;110;36.79
-Vietnam;398;369;29;7.86
-Marokko;365;399;-34;-8.52
-Aserbaidschan;361;365;-4;-1.1
-Südkorea;356;353;3;0.85
-Italien;331;217;114;52.53
-Kamerun;286;211;75;35.55
-Indonesien;276;258;18;6.98
-Spanien;265;125;140;112.0
-Mexiko;252;245;7;2.86
-Taiwan (Republik China);242;200;42;21.0
-Afghanistan;234;241;-7;-2.9
-Kolumbien;206;263;-57;-21.67
-Österreich;201;157;44;28.03
-Tunesien;181;229;-48;-20.96
-Kenia;162;169;-7;-4.14
-Brasilien;161;161;0;0.0
-Usbekistan;149;166;-17;-10.24
-Libanon;139;178;-39;-21.91
-Jemen;128;82;46;56.1
-Kasachstan;127;105;22;20.95
-Uganda;127;85;42;49.41
-Griechenland;120;92;28;30.43
-Malaysien;117;111;6;5.41
-Irak;115;132;-17;-12.88
-Jordanien;115;150;-35;-23.33
-Polen;111;73;38;52.05
-Rumänien;105;67;38;56.72
-Japan;100;102;-2;-1.96
-Georgien;98;97;1;1.03
-Peru;96;102;-6;-5.88
-Ecuador;90;116;-26;-22.41
-Vereinigtes Königreich;90;64;26;40.62
-Albanien;89;115;-26;-22.61
-Birma (Myanmar);84;71;13;18.31
-Portugal;83;61;22;36.07
-Algerien;81;96;-15;-15.62
-Thailand;77;77;0;0.0
-Kanada;72;86;-14;-16.28
-Bulgarien;69;75;-6;-8.0
-Israel;65;46;19;41.3
-Philippinen;64;73;-9;-12.33
-Belarus;61;38;23;60.53
-Simbabwe;61;61;0;0.0
-Ungarn;61;44;17;38.64
-Sudan;59;55;4;7.27
-Niederlande;57;35;22;62.86
-Äthiopien;56;82;-26;-31.71
-Chile;54;53;1;1.89
-Armenien;53;38;15;39.47
-Frankreich;53;52;1;1.92
-Mongolei;50;36;14;38.89
-Australien;47;31;16;51.61
-Mauritius;47;51;-4;-7.84
-Schweiz;47;44;3;6.82
-Südafrika;47;42;5;11.9
-Palästinensische Autonomiegebiete;45;59;-14;-23.73
-Ruanda;43;51;-8;-15.69
-Irland;41;27;14;51.85
-Hongkong;35;39;-4;-10.26
-Kirgisistan;34;30;4;13.33
-Singapur;34;34;0;0.0
-Kosovo;32;43;-11;-25.58
-Serbien;31;33;-2;-6.06
-Tschechien;30;25;5;20.0
-Tansania;29;30;-1;-3.33
-Bolivien;27;13;14;107.69
-Kroatien;26;24;2;8.33
-Argentinien;25;17;8;47.06
-Costa Rica;25;26;-1;-3.85
-Libyen;22;24;-2;-8.33
-Belgien;21;15;6;40.0
-Bosnien und Herzegowina;21;29;-8;-27.59
-Slowakei (Slowakische Republik);21;10;11;110.0
-Tadschikistan;20;14;6;42.86
-Litauen;19;18;1;5.56
-Luxemburg;19;28;-9;-32.14
-Estland;18;5;13;260.0
-El Salvador;17;7;10;142.86
-Venezuela;17;21;-4;-19.05
-Gambia;16;25;-9;-36.0
-Norwegen;16;9;7;77.78
-Turkmenistan;16;13;3;23.08
-Schweden;15;10;5;50.0
-Sierra Leone;15;7;8;114.29
+Indien;9808;9790;18;0.18
+Pakistan;4176;4631;-455;-9.83
+Türkei;3021;2460;561;22.8
+Deutschland;2367;2267;100;4.41
+Iran (Islamische Republik);2332;2285;47;2.06
+China;1983;1997;-14;-0.7
+Ghana;1190;869;321;36.94
+Bangladesch;1089;1893;-804;-42.47
+Ägypten;1047;898;149;16.59
+Ukraine;871;754;117;15.52
+Nigeria;771;777;-6;-0.77
+Nepal;594;362;232;64.09
+Russland;589;748;-159;-21.26
+Syrien;504;448;56;12.5
+Staatenlos;475;411;64;15.57
+USA;474;434;40;9.22
+Sri Lanka;450;318;132;41.51
+Vietnam;433;385;48;12.47
+Marokko;389;425;-36;-8.47
+Aserbaidschan;383;379;4;1.06
+Südkorea;378;366;12;3.28
+Italien;360;231;129;55.84
+Kamerun;318;232;86;37.07
+Indonesien;303;273;30;10.99
+Spanien;287;132;155;117.42
+Mexiko;272;254;18;7.09
+Taiwan (Republik China);253;204;49;24.02
+Afghanistan;247;255;-8;-3.14
+Kolumbien;221;270;-49;-18.15
+Österreich;219;164;55;33.54
+Tunesien;197;250;-53;-21.2
+Kenia;180;175;5;2.86
+Brasilien;170;169;1;0.59
+Usbekistan;168;171;-3;-1.75
+Libanon;152;196;-44;-22.45
+Kasachstan;141;112;29;25.89
+Uganda;139;100;39;39.0
+Griechenland;135;98;37;37.76
+Jemen;132;84;48;57.14
+Jordanien;125;157;-32;-20.38
+Malaysien;125;113;12;10.62
+Irak;124;136;-12;-8.82
+Polen;121;75;46;61.33
+Rumänien;110;70;40;57.14
+Japan;109;107;2;1.87
+Georgien;106;103;3;2.91
+Peru;102;107;-5;-4.67
+Albanien;100;121;-21;-17.36
+Vereinigtes Königreich;98;70;28;40.0
+Ecuador;96;119;-23;-19.33
+Birma (Myanmar);90;76;14;18.42
+Algerien;89;100;-11;-11.0
+Portugal;88;63;25;39.68
+Thailand;81;78;3;3.85
+Bulgarien;75;77;-2;-2.6
+Kanada;73;89;-16;-17.98
+Israel;72;53;19;35.85
+Ungarn;70;49;21;42.86
+Belarus;68;42;26;61.9
+Philippinen;68;77;-9;-11.69
+Frankreich;65;56;9;16.07
+Niederlande;65;40;25;62.5
+Simbabwe;65;66;-1;-1.52
+Sudan;61;57;4;7.02
+Chile;58;54;4;7.41
+Äthiopien;58;84;-26;-30.95
+Armenien;57;42;15;35.71
+Mauritius;53;54;-1;-1.85
+Mongolei;52;37;15;40.54
+Südafrika;52;44;8;18.18
+Palästinensische Autonomiegebiete;51;62;-11;-17.74
+Australien;50;32;18;56.25
+Schweiz;49;48;1;2.08
+Irland;45;28;17;60.71
+Ruanda;44;51;-7;-13.73
+Singapur;37;35;2;5.71
+Hongkong;36;40;-4;-10.0
+Kirgisistan;36;31;5;16.13
+Tansania;34;31;3;9.68
+Kosovo;33;45;-12;-26.67
+Serbien;32;35;-3;-8.57
+Tschechien;30;26;4;15.38
+Argentinien;28;17;11;64.71
+Kroatien;28;27;1;3.7
+Bolivien;27;15;12;80.0
+Belgien;26;15;11;73.33
+Costa Rica;26;28;-2;-7.14
+Slowakei (Slowakische Republik);25;10;15;150.0
+Libyen;23;28;-5;-17.86
+Tadschikistan;23;16;7;43.75
+Bosnien und Herzegowina;22;29;-7;-24.14
+Luxemburg;21;31;-10;-32.26
+Litauen;20;20;0;0.0
+Estland;19;5;14;280.0
+El Salvador;18;7;11;157.14
+Turkmenistan;18;13;5;38.46
+Venezuela;18;22;-4;-18.18
+Gambia;17;25;-8;-32.0
+Norwegen;17;10;7;70.0
+Finnland;16;11;5;45.45
+Schweden;16;10;6;60.0
+Demokratische Republik Kongo;15;16;-1;-6.25
+Nordmazedonien;15;12;3;25.0
+Sierra Leone;15;8;7;87.5
+Zypern;15;15;0;0.0
 Dänemark;14;13;1;7.69
 Lettland;14;13;1;7.69
-Nordmazedonien;14;11;3;27.27
-Zypern;14;13;1;7.69
-Demokratische Republik Kongo;13;14;-1;-7.14
-Finnland;13;8;5;62.5
-Mauretanien;12;8;4;50.0
-Slowenien;12;5;7;140.0
-Benin;11;7;4;57.14
-Eritrea;11;14;-3;-21.43
-Guatemala;11;10;1;10.0
+Slowenien;14;6;8;133.33
+Südsudan;14;4;10;250.0
+Benin;13;7;6;85.71
+Eritrea;13;15;-2;-13.33
+Guatemala;12;10;2;20.0
+Mauretanien;12;9;3;33.33
+Somalia;12;20;-8;-40.0
 Madagaskar;11;7;4;57.14
-Somalia;11;19;-8;-42.11
-Togo;11;11;0;0.0
+Namibia;11;6;5;83.33
+Togo;11;12;-1;-8.33
 Cote d Ivoire;10;13;-3;-23.08
-Namibia;10;6;4;66.67
-Südsudan;10;4;6;150.0
+Neuseeland;10;13;-3;-23.08
+Oman;10;6;4;66.67
+Sambia;10;6;4;66.67
 Honduras;9;22;-13;-59.09
 Jamaika;9;6;3;50.0
 Kambodscha;9;5;4;80.0
-Neuseeland;9;13;-4;-30.77
-Sambia;9;6;3;50.0
-Alandinseln;7;10;-3;-30.0
+Mosambik;9;10;-1;-10.0
+Burkina Faso;8;5;3;60.0
+Saudi-Arabien;8;11;-3;-27.27
+Alandinseln;7;12;-5;-41.67
 Bahrain;7;8;-1;-12.5
-Burkina Faso;7;5;2;40.0
-Mosambik;7;9;-2;-22.22
-Oman;7;6;1;16.67
+Guinea;7;12;-5;-41.67
+Kongo (Republik Kongo);7;7;0;0.0
 Senegal;7;5;2;40.0
-Guinea;6;10;-4;-40.0
 Island;6;3;3;100.0
-Kongo (Republik Kongo);6;7;-1;-14.29
+Malawi;6;5;1;20.0
+Moldau (Republik Moldau);6;10;-4;-40.0
 Nicaragua;6;8;-2;-25.0
-Saudi-Arabien;6;11;-5;-45.45
-Malawi;5;5;0;0.0
-Moldau (Republik Moldau);5;10;-5;-50.0
-Montenegro;5;6;-1;-16.67
+Montenegro;5;7;-2;-28.57
+Vereinigte Arabische Emirate;5;4;1;25.0
 Burundi;4;5;-1;-20.0
 Haiti;4;1;3;300.0
 Malta;4;3;1;33.33
-Vereinigte Arabische Emirate;4;4;0;0.0
+Paraguay;4;5;-1;-20.0
 Angola;3;13;-10;-76.92
 Botsuana;3;4;-1;-25.0
-Britisches Territorium im Indischen Ozean;3;4;-1;-25.0
+Britisches Territorium im Indischen Ozean;3;5;-2;-40.0
 Kuwait;3;2;1;50.0
+Liberia;3;6;-3;-50.0
+Mali;3;3;0;0.0
+Niger;3;1;2;200.0
 Panama;3;4;-1;-25.0
-Paraguay;3;5;-2;-40.0
+Trinidad und Tobago;3;7;-4;-57.14
 Antigua und Barbuda;2;1;1;100.0
 Barbados;2;1;1;100.0
 Bhutan;2;1;1;100.0
@@ -153,12 +157,8 @@ Dominica;2;1;1;100.0
 Dominikanische Republik;2;3;-1;-33.33
 Kap Verde;2;0;2;100.0
 Lesotho;2;0;2;100.0
-Liberia;2;5;-3;-60.0
 Liechtenstein;2;0;2;100.0
-Mali;2;3;-1;-33.33
-Niger;2;1;1;100.0
 Seychellen;2;0;2;100.0
-Trinidad und Tobago;2;7;-5;-71.43
 Uruguay;2;3;-1;-33.33
 Amerikanisch-Ozeanien;1;1;0;0.0
 Anguilla;1;0;1;100.0
@@ -176,4 +176,5 @@ Puerto Rico;1;1;0;0.0
 Svalbard und Jan Mayen;1;1;0;0.0
 Swasiland;1;1;0;0.0
 Timor-Leste;1;0;1;100.0
+Turks- und Caicosinseln;1;0;1;100.0
 Zentralafrikanische Republik;1;0;1;100.0
