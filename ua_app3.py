@@ -206,13 +206,14 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
             uni-assist-Geschäftssstelle Berlin, {heute}:</i></b>
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr noch deutlich zurück (-{diff1}%). Die sechs wichtigsten Herkunftsländer des Vorjahres liegen leicht bis deutlich hinter den Vorjahreszahlen, v.a. Pakistan und Bangladesch. V.a. Ghana legt deutlich zu.
+            Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr noch leicht zurück. 
+Von den wichtigsten zehn Herkunftsländern liegen zwischenzeitlich nur Bangladesch und Pakistan gegenüber dem Vorjahr deutlicher zurück. Die übrigen TOP Herkunftsländer, v.a. Ghana und die Türkei, weisen bereits Überschüsse gegenüber dem Vorjahr aus und lassen einen weiteren Zuwachs in 2025 erwarten. 
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Die Bearbeitung der Bewerbungen liegt absolut wie relativ deutlich vor dem Arbeitsfortschritt des Vorjahres. Durch +{diff2}% mehr bearbeitete Studienbewerbungen ist das ToDo bei geringerer Antragszahl erheblich kleiner als im Vorjahr, die durchschnittliche Bearbeitungszeit liegt unter 2 Wochen.
+            In der Bearbeitung von Studienbewerbungen kam die Geschäftsstelle absolut wie relativ deutlich zügiger voran als im Vorjahr: Mit beinahe 8% mehr bearbeiteten Studienbewerbungen liegt das aktuelle ToDo erheblich unter dem des Vorjahres, die durchschnittliche Bearbeitungszeit aktuell bei 3 Wochen. 
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Auch wenn der Bewerbungseingang absolut noch zurück liegt, deutet die Entwicklung der Bewerbungseingänge nach KWs an, dass sich der Rückstand in den kommenden Wochen aufgeholt werden könnte.
+            Auch wenn der Eingang an Studienbewerbungen absolut noch leicht zurück liegt, deutet die Entwicklung der Bewerbungseingänge an, dass der Rückstand in den kommenden Wochen durchaus ausgeglichen und in ein Wachstum gedreht werden kann.
             </p>
             
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
