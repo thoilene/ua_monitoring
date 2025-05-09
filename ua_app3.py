@@ -206,7 +206,7 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
             uni-assist-Geschäftssstelle Berlin, {heute}:</i></b>
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr <br>noch leicht zurück. 
+            Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr <br>noch <font color="green">leicht</font> zurück. 
             Von den wichtigsten zehn Herkunftsländern liegen zwischenzeitlich nur Bangladesch und Pakistan gegenüber dem Vorjahr deutlicher zurück. Die übrigen <br>TOP Herkunftsländer, v.a. Ghana und die Türkei, weisen bereits Überschüsse gegenüber dem Vorjahr aus und lassen einen weiteren Zuwachs in 2025 erwarten. 
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
