@@ -188,12 +188,12 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
     with col1:
         st.metric(label="Anträge (Eingang)", 
                         value=f"{act_antraege}",
-                        delta=f"-{diff1}% zum Vorjahr:{alt_antraege}", border=True)
+                        delta=f"-{diff1}% zum Vorjahr", border=True)
 
     with col2:
         st.metric(label="Anträge (Weitergeleitet)",
                 value=f"{act_bearb_antraege}",
-                delta=f"+{diff2}% zum Vorjahr: {alt_bearb_antraege}", border=True)
+                delta=f"+{diff2}% zum Vorjahr", border=True)
 
     with col3:
         with st.container(border=True, height=127):
@@ -331,6 +331,13 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.markdown(f"""           
+            <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
+            Die Doppelbalken-Grafik zeigt den Eingang von Bewerbungen aus allen Herkunftsländern binnen der jeweiligen Kalenderwoche (orange) im Vergleich zum Eingang pro KW im Vorjahres-Semester (blau).
+            </p>
+        """, unsafe_allow_html=True)
+
 ##################################################################
 
 
