@@ -54,7 +54,7 @@ decr = 1
 if TODAY_tmp.weekday()==0:
     decr = 3
 #TODAY     = datetime(TODAY_tmp.year,TODAY_tmp.month,TODAY_tmp.day-decr).date()
-TODAY     = datetime(2025,5,8).date()
+TODAY     = datetime(2025,5,10).date()
 
 heute =  TODAY.strftime("%d.%m.%Y")
 
@@ -102,14 +102,14 @@ print("***alt_bearb_antraege:",alt_bearb_antraege)
 diff2 = round(100.0*abs(act_bearb_antraege-alt_bearb_antraege)/alt_bearb_antraege, 2)
 act_fehlerhaft = ldf1["fehlerhaft"].iat[0]
 alt_fehlerhaft = ldf2["fehlerhaft"].iat[0]
-
+#image_green = Image.open('traffic-light-green.png')
 image = Image.open('ua_img.png')
-image_green = Image.open('traffic-light-green.png')
+image_green = Image.open('OIP.jpeg')
 image_red = Image.open('red.png')
 image_yellow = Image.open('yellow.png')
 
-h = int(0.09*(image_green.height))
-w = int(0.25*(image_green.width))
+h = int(0.345*(image_green.height))
+w = int(0.5*(image_green.width))
 image_green = image_green.resize(size=(w,h))
 
 col01, col02 = st.columns([1, 10])
@@ -197,8 +197,10 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
                 delta=f"+{diff2}% zum Vorjahr", border=True)
 
     with col3:
-        with st.container(border=True, height=127):
-            st.image(image_green)
+        with st.container(border=True):
+            left, center, right = st.columns([1, 8, 1])
+            with center:
+                st.image(image_green)
         st.markdown("<p style='font-size:14px; margin-top:1px; margin-left:10px;margin-right:1px; white-space: normal;'> Abb. 1: Status - <font color='green'><b>Grün</b></font></p>", unsafe_allow_html=True)
 
     #with st.markdown('<div>', unsafe_allow_html=True):
@@ -242,16 +244,16 @@ with stylable_container(
         # Create pie chart
         print(as_df)
         
-        fig = px.pie(as_df,  values='Antraege', names='Status', title=f"Abb. 2: Kuchengrafik Anträge", color_discrete_sequence=['#808080', '#c9aa4c', '#800020']  # uni-assist colors
+        fig = px.pie(as_df,  values='Antraege', names='Status', title=f"Abb. 2: Anträge nach Bearbeitungsstatus", color_discrete_sequence=['#808080', '#c9aa4c', '#800020']  # uni-assist colors
         )
-        fig.update_traces(sort=False,title_position='top center',textinfo='percent+value', selector=dict(type='pie')) 
+        fig.update_traces(sort=False,title_position='top center',textinfo='percent+value', selector=dict(type='pie'),direction='clockwise') 
         # Update layout
         fig.update_layout(
 
             font_family="Ubuntu, Helvetica, Arial, sans-serif",
              title={
                 'y': 0.98,
-                'x': 0.4,
+                'x': 0.55,
                 'xanchor': 'right',
                 'yanchor': 'top', 
                 },
@@ -272,7 +274,7 @@ with stylable_container(
         
         st.markdown(f"""           
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Das Kuchendiagramm zeigt in absoluten Zahlen und prozentualen Anteilen das Aufkommen an Studienbewerbungen zum Stichtag sowie die Arbeitsfortschritte.
+            Das Diagramm 'Anträge nach Bearbeitungsstatus' zeigt in absoluten Zahlen und prozentualen Anteilen das Aufkommen an Studienbewerbungen zum Stichtag sowie die Arbeitsfortschritte.
             </p>
         """, unsafe_allow_html=True)
 
@@ -311,8 +313,8 @@ xsticks = [f"Kw{x}" for x in list(kw_df.Eingangswoche.values)]
 
 fig = px.bar(kw_df,x=xsticks, y = ["WS 2024","WS 2025"], 
        labels={'x': 'Eingangswoche', 'value':'Anträge', 'variable':'Semester'},
-        barmode="group", title=f"Abb. 3: Doppelbalken-Grafik Bewerbungseingang nach KW (am Stichtag)",template="gridon", 
-                    height=500, range_y=[0,15000])
+        barmode="group", title=f"Abb. 3: Bewerbungseingang im Vergleich nach KW (am Stichtag)",template="gridon", 
+                    height=500, range_y=[0,20000])
 
 fig.update_layout(
     width=900,
@@ -323,7 +325,7 @@ fig.update_layout(
     font_family="Ubuntu, Helvetica, Arial, sans-serif",
     title={
                 'y': 0.98,
-                'x': 0.5,
+                'x': 0.425,
                 'xanchor': 'center',
                 'yanchor': 'top', 
                 },
@@ -336,7 +338,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.markdown(f"""           
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Die Doppelbalken-Grafik zeigt den Eingang von Bewerbungen aus allen Herkunftsländern binnen der jeweiligen Kalenderwoche (orange) im Vergleich zum Eingang pro KW im Vorjahres-Semester (blau).
+            Die Grafik 'Bewerbungseingang im Vergleich' zeigt den Eingang von Bewerbungen aus allen Herkunftsländern binnen der jeweiligen Kalenderwoche (orange) im Vergleich zum Eingang pro KW im Vorjahres-Semester (blau).
             </p>
         """, unsafe_allow_html=True)
 
@@ -348,24 +350,25 @@ st.markdown(f"""
 st.divider()
 
 # Top 5 countries section
-st.header("Herkunftsländer")
+st.header("Herkunftsländer der Bewerber*Innen")
 
 st.divider()
 
 laenderTop10_df = pd.read_csv("Top10BewerberNachLaender.csv", sep=";")
 #countries_data["color"] = ['#c9aa4c','#800020', '#B26679',  '#808080','#D3D3D3']
-fig_countries = px.pie(laenderTop10_df,  values='WS 2025', names='Herkunftsland', title="Abb. 4: Kuchengrafik Herkunftsländer", labels={'value':'Herkunftsland'} ,
+fig_countries = px.pie(laenderTop10_df,  values='WS 2025', names='Herkunftsland', title="Abb. 4: Bewerber nach Herkunftsländer", labels={'value':'Herkunftsland'} ,
 )
 
 #fig_countries = px.bar(countries_data,                     x='Land',                      y='Anteil',      title='Top 5 Herkunftsländer der Bewerber*innen')
-fig_countries.update_traces(sort=False,title_position='top center',textinfo='percent+value', selector=dict(type='pie')) 
+fig_countries.update_traces(sort=False,title_position='top center',textinfo='percent+value', selector=dict(type='pie'),direction='clockwise')
+
 fig_countries.update_layout(
     width=900,
     height=450,
     margin=dict(l=40, r=40, t=40, b=40),
     title={
                 'y': 0.98,
-                'x': 0.3,
+                'x': 0.25,
                 'xanchor': 'center',
                 'yanchor': 'top', 
                 },
@@ -379,14 +382,14 @@ st.plotly_chart(fig_countries, use_container_width=True)
 # '#808080', '#c9aa4c', '#800020'
 
 st.write("""
-Die Kuchengrafik 'Herkunftsländer' weist die Anteile aller Studienbewerber*innen im aktuellen Semesterverfahren nach Nationalität aus.
+Die Grafik 'Bewerber nach Herkunftsländer' weist die Anteile aller Studienbewerber*innen im aktuellen Semesterverfahren nach Nationalität aus.
 Dabei werden die TOP 10 Herkunftsländer einzeln, alle weiteren als 'Tortenstück' ausgewiesen.
 """)
 
 st.divider()
 
 ######################################################################
-st.header("Gewinne und Verluste")
+st.header("Bewerberdynamik")
 colors = []
 for x in laenderTop10_df["Diff (%)"].values:
     if x >= 0:
@@ -397,9 +400,9 @@ print(colors)
 laenderTop10_df['Änderung zum Vorjahr'] = colors
 
 fig = px.bar(laenderTop10_df,x="Herkunftsland", y = ["Diff (%)"], color = "Änderung zum Vorjahr",
-       labels={'x': 'Herkunftsland', 'value':'Dfifferenz (%)', 'variable':'Änderung zum Vorjahr'},
+       labels={'x': 'Herkunftsland', 'value':'Differenz (%)', 'variable':'Änderung zum Vorjahr'},
        color_discrete_map={'Rückgang':'red','Zuwachs':'green'},
-       barmode="group", title="Abb. 5: Gewinne und Verluste an Bewerber*innen aus den TOP 10 Herkunftsländern",template="gridon", 
+       barmode="group", title="Abb. 5: Zuwachs / Rückgang an Bewerber*innen aus den TOP 10 Herkunftsländern",template="gridon", 
                     height=500, range_y=[-50,50])
 
 
@@ -412,7 +415,7 @@ fig.update_layout(
     font_family="Ubuntu, Helvetica, Arial, sans-serif",
     title={
                 'y': 0.98,
-                'x': 0.50,
+                'x': 0.485,
                 'xanchor': 'center',
                 'yanchor': 'top', 
                 },
@@ -424,7 +427,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 st.write("""
-Für die TOP 10 Herkunftsländer zeigt die Balkengrafik 'Gewinne/Verluste'  die prozentualen Zuwächse bzw. die Rückgänge an Studienbewerber*innen im Vergleich zum Vorjahr jeweils zum Stichtag.
+Für die TOP 10 Herkunftsländer zeigt die Grafik 'Zuwachs / Rückgang'  die prozentualen Zuwächse bzw. die Rückgänge an Studienbewerber*innen im Vergleich zum Vorjahr jeweils zum Stichtag.
 """)
 #######################################################################
 
