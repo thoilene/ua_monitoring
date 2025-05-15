@@ -59,7 +59,7 @@ TODAY     = datetime(2025,5,10).date()
 heute =  TODAY.strftime("%d.%m.%Y")
 
 # Title section with yellow background
-st.markdown(f"""<div class="yellow-section"><h4><b>Monitoring WSV 2025/26</b>: {heute} (Stichtag)</h4></div>""", unsafe_allow_html=True)
+st.markdown(f"""<div class="yellow-section"><h4><b>Monitoring WSV 2025/26</b>:&nbsp;<font color="darkblue"><b> {heute} (Stichtag)</b></font></h4></div>""", unsafe_allow_html=True)
 
 # logo-uniassist-newsletter.png
 image_logo = Image.open("uni-assist_nur_logo.png")
@@ -136,7 +136,7 @@ Dieses Dashboard zeigt die Fortschritte des laufenden ua-Semesterverfahrens.
 Dargestellt werden in fünf Grafiken zentrale Indikatoren der Zulassungsvorbereitung im Verein.
 Sie sollen den Mitgliedern dabei helfen, die eigenen Zulassungsverfahren adäquat zu planen und vorzubereiten.
 </p>
-<p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
+<p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'><br>
 Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Geschäftsstelle:
 </p>
 <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
@@ -210,21 +210,24 @@ Eine Ampelanzeige dokumentiert das Verfahrensrisiko nach Einschätzung der Gesch
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
             Der Eingang von Studienbewerbungen aus aller Welt liegt zum Stichtag gegenüber dem Vorjahr <br>noch <font color="darkblue">leicht</font> zurück. 
-            Von den wichtigsten zehn Herkunftsländern liegen zwischenzeitlich nur Bangladesch und Pakistan gegenüber dem Vorjahr deutlicher zurück. Die übrigen <br>TOP Herkunftsländer, v.a. Ghana und die Türkei, weisen bereits Überschüsse gegenüber dem Vorjahr aus und lassen einen weiteren Zuwachs in 2025 erwarten. 
+            Von den wichtigsten zehn Herkunftsländern liegen zwischenzeitlich nur Bangladesch und Pakistan gegenüber dem Vorjahr deutlicher zurück. Die übrigen TOP10 Herkunftsländer, v.a. Ghana und die Türkei, weisen bereits Überschüsse Anstiege gegenüber dem Vorjahr aus und lassen einen weiteren Zuwachs in 2025 erwarten. 
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            In der Bearbeitung von Studienbewerbungen kam die Geschäftsstelle absolut wie relativ deutlich zügiger voran als im Vorjahr: Mit beinahe 8% mehr bearbeiteten Studienbewerbungen liegt das aktuelle ToDo erheblich unter dem des Vorjahres, die durchschnittliche Bearbeitungszeit aktuell <br> bei 3 Wochen.
+            In der Bearbeitung von Studienbewerbungen kam die Geschäftsstelle absolut wie relativ deutlich zügiger voran als im Vorjahr: Mit beinahe 11% mehr bearbeiteten Studienbewerbungen liegt das aktuelle ToDo erheblich unter dem des Vorjahres, die durchschnittliche Bearbeitungszeit aktuell <br> bei 3- 4 Wochen.
             </p>
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
             Auch wenn der Eingang an Studienbewerbungen absolut noch leicht zurück liegt, deutet die Entwicklung der Bewerbungseingänge an, dass der Rückstand in den kommenden Wochen durchaus ausgeglichen und in ein Wachstum gedreht werden kann.
             </p>
             
             <p style='font-size:16px; margin-bottom:10px; margin-left:10px;margin-right:10px; white-space: normal;'>
-            Eine Deutung der Gewinne und Verluste nach Herkunftsländern ist  früh im Verfahren wenig aussagekräftig.
+            Eine Deutung der Gewinne und Verluste nach Herkunftsländern ist früh im Verfahren wenig aussagekräftig.
             </p>
         """, unsafe_allow_html=True)
 
 as_df = pd.read_csv("status_df.csv",sep=";")
+as_df.replace("Weitergeleitet Antraege", "Weitergeleitet Anträge",inplace=True)
+as_df.replace("Antraege in Bearbeitung", "Anträge in Bearbeitung",inplace=True)
+as_df.replace("Fehlerhafte Antraege", "Fehlerhafte Anträge",inplace=True)
 
 print(as_df)
 print("=====================================")
